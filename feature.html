@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BEE PASS INDONESIA</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: OnePage
+  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="">
+          <img src="log.gif" >
+      </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feature.html"class="active">MyFeature</a></li>
+          <li><a href="contact.html">Contact</a></li> 
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted d-inline-flex align-items-center gap-2" 
+   href="https://wa.me/6288211698811?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20Anda.%20Bisa%20dibantu%3F" 
+   target="_blank">
+  <i class="bi bi-whatsapp"></i>
+  Hubungi Kami
+</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  // Panggil file JSON
+  fetch('mf.json') // ganti dengan nama file kamu
+    .then(response => response.json())
+    .then(data => {
+      const img = document.createElement('img');
+      img.src = data.image; // Ambil string base64 dari key 'image'
+      img.style.maxWidth = '100%';
+      img.style.height = 'auto';
+      img.style.borderRadius = '12px';
+
+      document.getElementById('container').appendChild(img);
+    });
+</script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    Swal.fire({
+      html: `
+       <div style="text-align: center;">
+  <img src="mf.png"
+     style="max-width: 100%; height: auto; border-radius: 12px;">
+
+</div>
+      `,
+      showConfirmButton: true,
+      confirmButtonText: 'Saya Mengerti',
+      confirmButtonColor: '#3085d6',
+      backdrop: true,
+      allowOutsideClick: false,
+      allowEscapeKey: false
+    });
+  });
+</script>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <img src="assets/img/hero-bg-abstract.jpg" alt="" data-aos="fade-in" class="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+          <div class="col-xl-7 col-lg-9 text-center">
+            <h1>MyFeature</h1>
+            <p></p>
+          </div>
+        </div>
+    </section><!-- /Hero Section -->
+    <!-- About Section -->
+    <section id="fitur-ukur-tanah" style="font-family: Arial, sans-serif; padding: 4rem;">
+      <h2 style="margin-bottom: 0.5rem; text-align: center;"><strong>Mengukur Luas dan Jarak</strong></h2>
+      <p style="margin-bottom: 0.5rem; text-align: center;">
+        Klik pada peta untuk menambahkan titik. Sistem akan menghitung jarak, beda tinggi, sudut arah, dan luas area secara otomatis.
+      </p>
+      <p style="margin-bottom: 1rem; text-align: center;">
+        Hasil akan muncul di bawah maps.
+      </p>
+
+      <div style="margin-bottom: 1rem;">
+        <button onclick="resetMap()" style="padding: 8px 16px; background-color: #ef8d31; color: white; border: none; border-radius: 4px; cursor: pointer;">Reset Titik</button>
+      </div>
+    
+      <div id="map" style="height: 400px; width: 100%; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ccc;"></div>
+      <div class="info" id="result" style="background: #f1f1f1; padding: 1rem; border-radius: 8px;"></div>
+    
+      <!-- Leaflet CSS & JS -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+      <!-- Leaflet Control Geocoder (for search) -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+      <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    
+      <script>
+        const map = L.map('map').setView([-7.797068, 110.370529], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+    
+        // Tambahkan Search Geocoder
+        L.Control.geocoder({
+          defaultMarkGeocode: true,
+          placeholder: "Cari lokasi...",
+          showResultIcons: true
+        }).addTo(map);
+    
+        let points = [];
+        let markers = [];
+        let polyline, polygon;
+    
+        function computeResults() {
+          if (points.length < 2) return;
+    
+          const resultDiv = document.getElementById('result');
+          let totalDistance = 0;
+          let totalElevation = 0;
+          let azimuth = '';
+          let area = 0;
+    
+          for (let i = 0; i < points.length - 1; i++) {
+            const p1 = points[i];
+            const p2 = points[i + 1];
+            const dist = map.distance(p1.latlng, p2.latlng);
+            totalDistance += dist;
+    
+            const dh = (p2.elev ?? 0) - (p1.elev ?? 0);
+            totalElevation += dh;
+    
+            if (i === 0) {
+              const dy = p2.latlng.lat - p1.latlng.lat;
+              const dx = p2.latlng.lng - p1.latlng.lng;
+              const angle = Math.atan2(dy, dx);
+              azimuth = ((angle * 180 / Math.PI + 360) % 360).toFixed(2) + "°";
+            }
+          }
+    
+          if (points.length >= 3) {
+            const latlngs = points.map(p => p.latlng);
+            latlngs.push(points[0].latlng);
+            for (let i = 0; i < latlngs.length - 1; i++) {
+              area += (latlngs[i].lng * latlngs[i + 1].lat) - (latlngs[i + 1].lng * latlngs[i].lat);
+            }
+            area = Math.abs(area / 2) * 12365;
+          }
+    
+          resultDiv.innerHTML = `
+            <strong>Jarak Total:</strong> ${totalDistance.toFixed(2)} meter<br/>
+            <strong>Beda Tinggi Total:</strong> ${totalElevation.toFixed(2)} meter<br/>
+            <strong>Sudut Arah (Azimuth):</strong> ${azimuth}<br/>
+            <strong>Luas:</strong> ${area.toFixed(2)} m²
+          `;
+        }
+    
+        map.on('click', function(e) {
+          const marker = L.marker(e.latlng).addTo(map);
+          markers.push(marker);
+    
+          const fakeElevation = Math.random() * 50;
+    
+          points.push({
+            latlng: e.latlng,
+            elev: fakeElevation
+          });
+    
+          if (points.length > 1) {
+            const latlngs = points.map(p => p.latlng);
+            if (polyline) map.removeLayer(polyline);
+            polyline = L.polyline(latlngs, { color: 'blue' }).addTo(map);
+          }
+    
+          if (points.length >= 3) {
+            if (polygon) map.removeLayer(polygon);
+            polygon = L.polygon(points.map(p => p.latlng), { color: 'green', fillOpacity: 0.2 }).addTo(map);
+          }
+    
+          computeResults();
+        });
+    
+        function resetMap() {
+          points = [];
+    
+          markers.forEach(m => map.removeLayer(m));
+          markers = [];
+    
+          if (polyline) {
+            map.removeLayer(polyline);
+            polyline = null;
+          }
+    
+          if (polygon) {
+            map.removeLayer(polygon);
+            polygon = null;
+          }
+    
+          document.getElementById('result').innerHTML = '';
+        }
+      </script>
+    </section>
+    
+<!-- /About Section -->
+
+
+    <!-- Cut Section -->
+<section id="fitur-cut-fill" style="font-family: Arial, sans-serif; padding: 4rem; border-top: 1px solid #ccc;">
+  <h2 style="margin-bottom: 0.5rem; text-align: center;"><strong>Cut and Fill</strong></h2>
+  <p style="margin-bottom: 0.5rem; text-align: center;">
+    Fitur ini digunakan untuk menghitung volume tanah yang perlu dipotong (cut) dan ditimbun (fill) berdasarkan elevasi aktual dan elevasi rencana (target).
+  Perhitungan dilakukan dari titik-titik yang telah Anda tambahkan sebelumnya pada peta.
+  </p>
+
+  <div style="max-width: 600px; margin: auto;">
+    <label for="targetElevation" style="display: block; margin-bottom: 0.5rem;">Masukkan Elevasi Target (meter):</label>
+    <input type="number" id="targetElevation" placeholder="Contoh: 30" style="padding: 8px; width: 100%; margin-bottom: 1rem; border-radius: 4px; border: 1px solid #ccc;" />
+
+    <button onclick="hitungCutFill()" style="padding: 10px 16px; background-color: #ef8d31; color: white; border: none; border-radius: 4px; cursor: pointer;">Hitung Cut and Fill</button>
+
+    <div id="cutFillResult" style="margin-top: 1rem; background: #f1f1f1; padding: 1rem; border-radius: 8px;"></div>
+  </div>
+
+  <script>
+    function hitungCutFill() {
+      const targetElev = parseFloat(document.getElementById('targetElevation').value);
+      const resultDiv = document.getElementById('cutFillResult');
+
+      if (isNaN(targetElev)) {
+        resultDiv.innerHTML = '<span style="color: red;">Masukkan elevasi target yang valid.</span>';
+        return;
+      }
+
+      if (points.length === 0) {
+        resultDiv.innerHTML = '<span style="color: red;">Belum ada titik yang dimasukkan pada peta.</span>';
+        return;
+      }
+
+      let totalCut = 0;
+      let totalFill = 0;
+
+      points.forEach(p => {
+        const diff = (p.elev ?? 0) - targetElev;
+        if (diff > 0) {
+          totalCut += diff;
+        } else {
+          totalFill += Math.abs(diff);
+        }
+      });
+
+      const averageCut = totalCut / points.length;
+      const averageFill = totalFill / points.length;
+
+      resultDiv.innerHTML = `
+        <strong>Total Titik:</strong> ${points.length}<br/>
+        <strong>Total Cut:</strong> ${totalCut.toFixed(2)} m<br/>
+        <strong>Total Fill:</strong> ${totalFill.toFixed(2)} m<br/>
+        <strong>Rata-rata Cut:</strong> ${averageCut.toFixed(2)} m<br/>
+        <strong>Rata-rata Fill:</strong> ${averageFill.toFixed(2)} m
+      `;
+    }
+  </script>
+</section>
+
+
+  
+
+<footer id="footer" class="footer">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="logo1.png" alt="" class="logo-img">
+      </a>
+        
+        <p>Transform your vision into reality with our expert solutions. Quality, innovation, and excellence in every step.</p>
+
+        <div class="social-links d-flex mt-4">
+          </div>
+      </div>
+  
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>2024</span> <strong class="px-1 sitename">PT Bee Pass Indonesia</strong> | All Rights Reserved</p>
+    </div>
+  </footer>
+  
+  <style>
+    .footer {
+      background: linear-gradient(135deg, #000000, #000000);
+      color: #ffffff;
+      padding: 50px 0;
+      font-size: 14px;
+    }
+    
+    .footer .logo .sitename {
+      font-size: 24px;
+      font-weight: bold;
+      color: #EF8D31;
+    }
+    
+    .footer p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .footer h4 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #EF8D31;
+      margin-bottom: 15px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      color: #EF8D31;
+      font-size: 20px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: #EF8D31;
+      color: #ffffff;
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.123);
+      padding-top: 10px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+  </style>
+  
+
+  <!-- Scroll Top -->
+  <a href="#navmenu" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ <!-- Mashead header-->
+ 
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
